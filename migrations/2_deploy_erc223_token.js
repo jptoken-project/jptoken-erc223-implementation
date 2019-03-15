@@ -1,8 +1,8 @@
 const fs = require('fs');
 const ERC223Token = artifacts.require('ERC223Token');
 
-const name = 'GToken'; // Specify the name of your token
-const symbol = 'GT'; // Specify the symbol of your token
+const name = 'JPToken'; // Specify the name of your token
+const symbol = 'JPT'; // Specify the symbol of your token
 const decimals = 18; // Number of decimal places
 const totalSupply = 1000000000; // Total supply of tokens (integer representation)
 

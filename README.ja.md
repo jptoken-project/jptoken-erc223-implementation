@@ -1,56 +1,26 @@
-# ERC223トークンの実装
+# JPToken - ERC223トークンの実装
 
 *Read this in other languages: [English](README.en.md), [日本語](README.ja.md).*
 
 ## 概要
 
-これはERC223トークンについての実装したソースコード及び、ドキュメントです。
-
-## トークンの設定
-
-トークンの名称・シンボル・総供給量・小数点以下の桁数は `migrations/2_deploy_erc223_token.js` ファイル内の変数により指定を変えることができるような実装にしています。
-
-```es6
-const fs = require('fs');
-const ERC223Token = artifacts.require('ERC223Token');
-
-const name = 'GToken'; // Specify the name of your token
-const symbol = 'GT'; // Specify the symbol of your token
-const decimals = 18; // Number of decimal places
-const totalSupply = 1000000000; // Total supply of tokens (integer representation)
-
-module.exports = (deployer) => {
-    deployer.deploy(ERC223Token, name, symbol, decimals, totalSupply).then(() => {
-        // Save ABI to file
-        fs.mkdirSync('deploy/abi/', { recursive: true });
-        fs.writeFileSync('deploy/abi/ERC223Token.json', JSON.stringify(ERC223Token.abi), { flag: 'w' });
-    });
-};
-```
+これは [JPToken Crypto\-currency project](https://www.jptoken.org/) が発行する [ERC223 token standard](https://github.com/ethereum/EIPs/issues/223) のトークンについてのソースコード及び、ドキュメントです。
 
 **トークンの名称**
 
-```es6
-const name = 'GToken'; // Specify the name of your token
-```
+`JPToken`
 
 **トークンの単位**
 
-```es6
-const symbol = 'GT'; // Specify the symbol of your token
-```
+`JPT`
 
 **小数点以下の桁数**
 
-```es6
-const decimals = 18; // Number of decimal places
-```
+`18`
 
-**総供給量(整数表現)**
+**総供給量**
 
-```es6
-const totalSupply = 1000000000; // Total supply of tokens (integer representation)
-```
+`1,000,000,000.000000000000000000 (JPT)`
 
 ## 仕様
 
@@ -133,7 +103,7 @@ Compiling your contracts...
 
 実装はGitHubにて公開する。
 
-https://github.com/godappslab/erc223-token-implementation
+https://github.com/jptoken-project/jptoken-erc223-implementation
 
 ## 参考文献
 
