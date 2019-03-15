@@ -1,56 +1,26 @@
-# Implementation of ERC 223 token
+# JPToken-Implementation of ERC 223 token
 
 *Read this in other languages: [English](README.en.md) , [Japanese](README.ja.md) .*
 
 ## Overview
 
-This is the implemented source code and documentation for the ERC 223 token.
-
-## Token setting
-
-The implementation is such that the specification of token name, symbol, total supply amount, and number of decimal places can be changed by variables in `migrations/2_deploy_erc223_token.js` file.
-
-```es6
-const fs = require('fs');
-const ERC223Token = artifacts.require('ERC223Token');
-
-const name = 'GToken'; // Specify the name of your token
-const symbol = 'GT'; // Specify the symbol of your token
-const decimals = 18; // Number of decimal places
-const totalSupply = 1000000000; // Total supply of tokens (integer representation)
-
-module.exports = (deployer) => {
-    deployer.deploy(ERC223Token, name, symbol, decimals, totalSupply).then(() => {
-        // Save ABI to file
-        fs.mkdirSync('deploy/abi/', { recursive: true });
-        fs.writeFileSync('deploy/abi/ERC223Token.json', JSON.stringify(ERC223Token.abi), { flag: 'w' });
-    });
-};
-```
+This is the source code and document about the token of [ERC223 token standard](https://github.com/ethereum/EIPs/issues/223) issued by [JPToken Crypto-currency project](https://www.jptoken.org/) .
 
 **Token name**
 
-```es6
-const name = 'GToken'; // Specify the name of your token
-```
+`JPToken`
 
 **Unit of token**
 
-```es6
-const symbol = 'GT'; // Specify the symbol of your token
-```
+`JPT`
 
 **Number of digits after the decimal point**
 
-```es6
-const decimals = 18; // Number of decimal places
-```
+`18`
 
-**Total supply amount (integer expression)**
+**Total supply amount**
 
-```es6
-const totalSupply = 1000000000; // Total supply of tokens (integer representation)
-```
+`1,000,000,000.000000000000000000 (JPT)`
 
 ## specification
 
@@ -132,7 +102,7 @@ Compiling your contracts...
 
 Implementation will be released on GitHub.
 
-https://github.com/godappslab/erc223-token-implementation
+https://github.com/jptoken-project/jptoken-erc223-implementation
 
 ## References
 
